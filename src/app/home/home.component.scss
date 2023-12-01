@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+* {
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.totalPage {
+    // background: url("https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg?w=2000");
+
+}
+
+.gridLayout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    grid-template-rows: 1fr;
+    grid-gap: 20px;
+    justify-items: center;
+}
+
+.boxSize {
+    // width: 120px;
+    // height: 270px;
+    width: 80%;
+    // display: flex;
+}
+
+.boxShadowBackground {
+    border: 1px solid black;
+    border-radius: 10px;
+    -webkit-box-shadow: 10px 10px 0px 0px #197278;
+    -moz-box-shadow: 10px 10px 0px 0px #197278;
+    box-shadow: 10px 10px 0px 0px #197278;
+}
+
+.imgBadgesGoogleAndAppStore {
+    width: 100%;
+}

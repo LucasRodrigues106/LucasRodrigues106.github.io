@@ -1,0 +1,12 @@
+.infosPage {
+  background-color: white;
+  min-height: 100%;
+}
+
+.infosToDelete {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-weight: 400;
+  font-size: 1.3rem;
+}
