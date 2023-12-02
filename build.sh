@@ -1,7 +1,7 @@
 #!/bin/bash
 
-#build da aplicação
-yarn run buildProduction
+#build da aplicação, a ultima parte tem que ser com aspas duplas
+ng build --configuration production --base-href "LucasRodrigues106.github.io"
 
 # Adicione todos os arquivos ao git
 git add .
