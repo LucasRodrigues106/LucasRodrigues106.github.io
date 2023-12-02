@@ -1,5 +1,8 @@
 #!/bin/bash
 
+#build da aplicação
+yarn run buildProduction
+
 # Adicione todos os arquivos ao git
 git add .
 
