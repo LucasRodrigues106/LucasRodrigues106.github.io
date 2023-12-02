@@ -25,7 +25,6 @@ export class InfosComponent {
   async ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('appName') as string;
     await this.getAppsFromAJsonFile();
-    console.log(this.app);
   }
 
   async getAppsFromAJsonFile() {
