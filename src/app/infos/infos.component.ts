@@ -12,6 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 export class InfosComponent {
   id: string = '';
   app: IApp = {
+    id: '',
     name: '',
     img: '',
     googlePlayLink: '',
@@ -23,12 +24,12 @@ export class InfosComponent {
   ) {}
 
   async ngOnInit() {
-    this.id = this.route.snapshot.paramMap.get('appName') as string;
+    this.id = this.route.snapshot.paramMap.get('idApp') as string;
     await this.getAppsFromAJsonFile();
   }
 
   async getAppsFromAJsonFile() {
     const myApps = await this.sharedProvider.getAppsFromAJsonFile();
-    this.app = myApps.find((myApp) => myApp.name === this.id) as IApp;
+    this.app = myApps.find((myApp) => myApp.id === this.id) as IApp;
   }
 }

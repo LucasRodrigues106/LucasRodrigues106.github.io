@@ -3,4 +3,8 @@ https://medium.com/swlh/how-to-deploy-an-angular-app-to-github-pages-without-usi
 
 ng build --configuration production --base-href "LucasRodrigues106.github.io"
 
+quando for commitar a aplicação roda este codigo{
+    ./build.sh "mensagem do commit"
+}
+
 update

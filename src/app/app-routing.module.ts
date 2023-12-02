@@ -9,7 +9,7 @@ const routes: Routes = [
     path: 'home',
     component: HomeComponent,
   },
-  { path: 'infos/:appName', component: InfosComponent },
+  { path: 'infos/:idApp', component: InfosComponent },
 ];
 
 @NgModule({

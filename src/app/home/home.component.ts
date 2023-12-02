@@ -15,12 +15,12 @@ export class HomeComponent {
   apps: IApp[] = [];
 
   constructor(private sharedProvider: SharedProvider, private router: Router) {
-    this.getAppsFromAJsonFile();
+    // this.getAppsFromAJsonFile();
   }
 
-  // async ngOnInit() {
-  //   await this.getAppsFromAJsonFile();
-  // }
+  async ngOnInit() {
+    await this.getAppsFromAJsonFile();
+  }
 
   goToInfosPage(idApp: string) {
     this.router.navigate([`infos`, idApp]);
