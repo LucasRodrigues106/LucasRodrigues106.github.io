@@ -39,6 +39,59 @@ quando for fazer uma nova pagina{
 }
 tutorial de como fazer rotas => https://vidafullstack.com.br/angular/o-que-e-routing-angular/
 
+colocar isso no chatgpt se tiver com problemas de rota{
+Estratégia de Localização: Quando você define useHash: false, está usando PathLocationStrategy, que usa o pushstate do HTML5 e requer suporte do servidor2. Quando você entra na URL no navegador localhost:4200/my-base/welcome/, o servidor precisa redirecionar localhost:4200/my-base/welcome/ para o seu index.html2. Quando você define useHash: true, está usando HashLocationStrategy. Você precisa adicionar # após o seu base-href (‘my-base’), a URL é localhost:4200/my-base/#/welcome/. O servidor faz diretamente uma solicitação para localhost:4200/my-base/ para o seu index.html, o que é fácil de implementar no lado do servidor2
+
+exemplo de como fazer isso em angular
+
+se chatgpt não der alguma solução decente tente essa {
+    Para usar a estratégia de localização `HashLocationStrategy` em Angular, você pode seguir estas etapas:
+
+1. **Importe o Módulo de Roteamento**: Primeiro, você precisa importar o `RouterModule` no seu módulo principal (geralmente `app.module.ts`).¹
+
+```typescript
+import { RouterModule } from '@angular/router';
+```
+
+2. **Defina suas Rotas**: Em seguida, defina suas rotas. Cada rota é um objeto JavaScript que contém duas propriedades: `path` e `component`. `path` é a URL que você deseja associar a um componente específico. `component` é o componente que você deseja exibir quando a URL é acessada.¹
+
+```typescript
+const routes: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  {
+    path: 'home',
+    component: HomeComponent,
+    children: [{ path: 'infos/:idApp', component: InfosComponent }],
+  },
+];
+```
+
+3. **Adicione Rotas ao Módulo de Roteamento**: Agora você precisa adicionar suas rotas ao `RouterModule` e adicionar o `RouterModule` às importações do seu módulo principal. Ao fazer isso, você precisa passar um objeto de configuração para o método `forRoot()` do `RouterModule`. Este objeto de configuração deve ter uma propriedade `useHash` definida como `true`.¹²
+
+```typescript
+@NgModule({
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
+```
+
+4. **Adicione o Outlet do Roteador ao seu Template**: Finalmente, você precisa adicionar o outlet do roteador ao template do seu componente principal (geralmente `app.component.html`). O outlet do roteador é onde os componentes serão renderizados quando suas rotas correspondentes forem acessadas.¹
+
+```html
+<router-outlet></router-outlet>
+```
+
+Espero que isso ajude! Deixe-me saber se você tiver mais alguma dúvida.
+
+Origem: conversa com o Bing, 02/12/2023
+(1) Angular static Base URl and routing with useHash=True. https://stackoverflow.com/questions/52416210/angular-static-base-url-and-routing-with-usehash-true.
+(2) Angular — The hash(#) trap - Medium. https://medium.com/@dao.houssene/angular-the-hash-trap-b2d415c2c241.
+(3) How to enable hash routing with provideRouter in Angular?. https://stackoverflow.com/questions/75993641/how-to-enable-hash-routing-with-providerouter-in-angular.
+}
+}
+
+
 
 ng build --configuration production --base-href "LucasRodrigues106.github.io"
 
