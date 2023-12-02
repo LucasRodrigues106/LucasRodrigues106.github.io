@@ -9,7 +9,7 @@ const routes: Routes = [
     path: 'home',
     component: HomeComponent,
   },
-  { path: 'infos/:idApp', component: InfosComponent },
+  { path: 'LucasRodrigues106.github.io/infos/:idApp', component: InfosComponent },
 ];
 
 @NgModule({
