@@ -23,7 +23,7 @@ export class HomeComponent {
   }
 
   goToInfosPage(idApp: string) {
-    this.router.navigate([`home/infos`, idApp]);
+    this.router.navigate([`infos`, idApp]);
   }
 
   async getAppsFromAJsonFile() {
