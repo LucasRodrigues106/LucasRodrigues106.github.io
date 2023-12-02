@@ -4,6 +4,7 @@ import { InfosComponent } from './infos/infos.component';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
+  { path: '', component: HomeComponent, pathMatch: 'full' },
   {
     path: 'home',
     component: HomeComponent,
