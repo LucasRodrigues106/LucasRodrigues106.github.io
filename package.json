@@ -6,9 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "buildProduction":"ng build --configuration production --base-href 'LucasRodrigues106.github.io'",
-    "junk": "git add . && git commit -m $1 && git push origin main"
+    "test": "ng test"
   },
   "private": true,
   "dependencies": {
