@@ -1,5 +1,42 @@
 https://medium.com/swlh/how-to-deploy-an-angular-app-to-github-pages-without-using-any-libraries-step-by-step-guide-cfe96fb0c879
 
+quando for fazer uma nova pagina{
+
+    em angular paginas são componentes,
+    para gerar um component => ng generate component nomeDoComponente
+
+    app-routing.module.ts e onde vai definir a rota das paginas{
+
+        rota normal
+        { path: 'nomeDaPagina', component: componenteParaSerExecutado }
+        { 
+            Ex.:{ path: 'infos', component: InfosComponent },
+        }
+  
+        rota com parametros
+        { path: 'nomeDaPagina/:parametroAqui', component: componenteParaSerExecutado }
+        {
+             Ex.:{ path: 'infos/:idApp', component: InfosComponent },
+        }
+
+        para navegar entre as paginas com typescript {
+            import { Router } from '@angular/router';
+
+            constructor(private router: Router){}
+
+            funcao(){
+            this.router.navigate([`infos`, idApp]);
+            //outra opcao de como fazer => this.router.navigate([`infos/${idApp}`]);
+            }
+
+            tambem da pra fazer no html mas eu não direi como faz
+        } 
+        
+
+    }
+}
+tutorial de como fazer rotas => https://vidafullstack.com.br/angular/o-que-e-routing-angular/
+
 
 ng build --configuration production --base-href "LucasRodrigues106.github.io"
 
