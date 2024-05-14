@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { IApp } from 'src/interfaces/IApp';
 import { SharedProvider } from 'src/providers/shared/shared';
@@ -8,7 +8,7 @@ import { SharedProvider } from 'src/providers/shared/shared';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
   title = 'my-angular-project-app';
   img: string = '../../assets/imgs/logoCell.webp';
 
@@ -24,6 +24,10 @@ export class HomeComponent {
 
   goToInfosPage(idApp: string) {
     this.router.navigate([`infos`, idApp]);
+  }
+
+  goToInfoDeleteDataUser() {
+    this.router.navigate(['InfoDeleteDataUser']);
   }
 
   async getAppsFromAJsonFile() {

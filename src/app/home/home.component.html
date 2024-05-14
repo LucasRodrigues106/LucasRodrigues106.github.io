@@ -1,6 +1,6 @@
 <div class="totalPage">
 
-  <router-outlet></router-outlet>
+  <!-- <router-outlet></router-outlet> -->
 
   <div
     style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; text-align: center; padding: 16px;">
@@ -17,8 +17,14 @@
   </div>
 
 
-  <span style="display: flex; font-size: 3rem; align-items: center; justify-content: center; margin: 10px;">
-    Our Apps
+  <span style="display: flex; font-size: 3rem; align-items: center; justify-content: center; margin: 10px; flex-direction: column; gap: 3px;">
+    <span>
+      Our Apps
+    </span>
+    <button (click)="goToInfoDeleteDataUser()"
+      style="background-color: transparent; border: 1px solid black; border-radius: 10px; padding: 8px;">
+      Tutorial de como deletar dados de aplicativos online
+    </button>
   </span>
 
   <div class="gridLayout" style="padding: 2rem;">

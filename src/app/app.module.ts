@@ -8,9 +8,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedProvider } from 'src/providers/shared/shared';
 import { HomeComponent } from './home/home.component';
+import { InfoDeleteDataUserComponent } from './info-delete-data-user/info-delete-data-user.component';
 
 @NgModule({
-  declarations: [AppComponent, InfosComponent, HomeComponent],
+  declarations: [AppComponent, InfosComponent, HomeComponent, InfoDeleteDataUserComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
